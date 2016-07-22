@@ -22,8 +22,7 @@ public class DataAirTempController {
 
 	@RequestMapping("/airTemp")
 	public void queryAirTemp(HttpServletRequest request, HttpServletResponse response) {
-		//long deviceid=Long.parseLong(request.getParameter("deviceid"));
-		long deviceid=10500001;
+		long deviceid=Long.parseLong(request.getParameter("deviceid"));
 		List<data_air_temp> airTempList=dataService.queryAirTemp(deviceid);
 		commonService.writerToJson(airTempList, response);
 	}
