@@ -17,13 +17,13 @@ import java.util.List;
  */
 @Controller
 public class DataAirTempController {
-	CommonService commonService = new CommonServiceImpl();
-	DataService dataService = new DataServiceImpl();
+    CommonService commonService = new CommonServiceImpl();
+    DataService dataService = new DataServiceImpl();
 
-	@RequestMapping("/airTemp")
-	public void queryAirTemp(HttpServletRequest request, HttpServletResponse response) {
-		long deviceid=Long.parseLong(request.getParameter("deviceid"));
-		List<data_air_temp> airTempList=dataService.queryAirTemp(deviceid);
-		commonService.writerToJson(airTempList, response);
-	}
+    @RequestMapping("/airTemp")
+    public void queryAirTemp(HttpServletRequest request, HttpServletResponse response) {
+        long deviceid = Long.parseLong(request.getParameter("deviceid"));
+        List<data_air_temp> airTempList = dataService.queryAirTemp(deviceid);
+        commonService.writerToJson(request, airTempList, response);
+    }
 }

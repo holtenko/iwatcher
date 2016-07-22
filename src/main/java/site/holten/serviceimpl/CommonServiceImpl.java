@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import site.holten.service.CommonService;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,9 +17,10 @@ public class CommonServiceImpl implements CommonService {
     private final Logger logger = LoggerFactory.getLogger(CommonServiceImpl.class);
 
     @Override
-    public void writerToJson(Object resp, HttpServletResponse response) {
+    public void writerToJson(HttpServletRequest request,Object resp, HttpServletResponse response) {
         Gson gson=new Gson();
-        responseString(gson.toJson(resp), response);
+        String callback = request.getParameter("callback");
+        responseString( callback+"("+gson.toJson(resp)+ ")", response);
     }
 
     private void responseString(String data, HttpServletResponse response) {
