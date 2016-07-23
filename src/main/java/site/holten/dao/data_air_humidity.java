@@ -9,6 +9,7 @@ import java.sql.Timestamp;
  */
 @Data
 public class data_air_humidity {
+	long deviceid;
 	Timestamp timestamp;
 	float value;
 }

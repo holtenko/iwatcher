@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * Created by holten.gao on 2016/7/22.
  */
 @Data
-public class data_air_temp {
+public class data_soil_temp {
 	long deviceid;
 	Timestamp timestamp;
 	float value;

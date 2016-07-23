@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>iGreenHouse</title>
   </head>
   <body>
-  hello holten
+  <a href="http://localhost:8080/iwatch/airtemp.html">室内空气温度</a>
+  <a href="http://localhost:8080/iwatch/airhumidity.html">室内空气湿度</a>
+  <a href="http://localhost:8080/iwatch/outdoor.html">室外参数</a>
   </body>
 </html>

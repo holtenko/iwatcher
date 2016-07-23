@@ -1,5 +1,7 @@
 package site.holten.service;
 
+import site.holten.controller.vo.CommonListReq;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -8,4 +10,5 @@ import javax.servlet.http.HttpServletResponse;
  */
 public interface CommonService {
     void writerToJson(HttpServletRequest request,Object resp, HttpServletResponse response);
+    CommonListReq genCommonListReq(HttpServletRequest request);
 }
